@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useRecipeById } from '../../hooks/getRecipeById';
+import { useHistory } from 'react-router-dom';
 import styles from './RecipeDetail.css';
 
 const RecipeDetail = ({ match }) => {
+  const history = useHistory();
+  console.log(match);
   const { recipeDetail, loading } = useRecipeById(match.params.recipe_id);
   const handleClick = event => {
     return fetch(`https://fathomless-meadow-03057.herokuapp.com/api/v1/recipes/${match.params.recipe_id}`, {
@@ -17,8 +20,11 @@ const RecipeDetail = ({ match }) => {
       .then(([ok, json]) => {
         if(!ok) throw json;
         return json;
+      })
+      .then(() => {
+        console.log(history);
+        history.replace('/');
       });
-    
   };
 
   if(loading)
