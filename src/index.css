@@ -17,6 +17,6 @@ html {
 body {
     background: $white;
     color: $black;
-  font-family: 'Feral';
+  font-family: 'sans serif';
   letter-spacing: 1px;
 }

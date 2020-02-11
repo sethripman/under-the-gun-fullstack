@@ -1,42 +1,49 @@
-// import React from 'react';
-// import { useRecipeById } from '../../hooks/getRecipeById';
-// import styles from './RecipeDetail.css';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useRecipeById } from '../../hooks/getRecipeById';
+import styles from './RecipeDetail.css';
 
-// const RecipeDetail = () => {
-//   const { recipeDetail, loading } = useRecipeById('5e41e4a721288700179bb29f');
+const RecipeDetail = ({ match }) => {
+  const { recipeDetail, loading } = useRecipeById(match.params.recipe_id);
 
-//   if(loading)
-//     return (
-       
-//       <div className={styles.spinner}>
-//         <div className={styles.bounce1}></div>
-//         <div className={styles.bounce2}></div>
-//       </div>
-      
-//     );
+  if(loading)
+    return (
+      <div className={styles.spinner}>
+        <div className={styles.bounce1}></div>
+        <div className={styles.bounce2}></div>
+      </div>
+    );
 
-// const ingredientsArray = recipeDetail.ingredients.(ingredient => {
-//   return [ingredient.amount, ingredient.measurement, ingredient.name];
-// });
+  const ingredientsArray = recipeDetail.ingredients.map(ingredient => (
+    <li key={ingredient.name}>
+      <p>
+        {ingredient.amount} {ingredient.measurement}s of {ingredient.name}
+      </p>
+    </li>
+  ));
 
-// const mappedDirections = directionDetail.forEach((direction, index) =>
-//    <li key={index}>
-//      <p>direction.</p>
-//    </li>
-//    );
+  const mappedDirections = recipeDetail.directions.map((direction, index) => (
+    <li key={index}>
+      <p>
+        {index + 1}. {direction}
+      </p>
+    </li>
+  ));
 
-//   const recipeDetail = mungedDetailArray => {
-//     return (
-//       // <Link className={styles.Link} key={recipeDetail._id} to={'/'}>
-//         <article className={styles.recipe}>
-//           <h3 className={styles.recipe_name}>{recipe.name}</h3>
-//           <ul className={styles.ingredient_list}>{mappedIngredients}</ul>
-//           <ul className={styles.direction_list}>{mappedDirections}</ul>
-//         </article>
-//       // </Link>
-//     );
-//   });
-//   return <ul className={styles.ul}>{recipeList}</ul>;
-// };
+  return (
+    <article key={recipeDetail._id} className={styles.recipe}>
+      <h3 className={styles.recipe_name}>{recipeDetail.name}</h3>
+      <ul className={styles.ingredient_list}>{ingredientsArray}</ul>
+      <ul className={styles.direction_list}>{mappedDirections}</ul>
+    </article>
+  );
+};
+export default RecipeDetail;
 
-// export default RecipeList;
+RecipeDetail.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      recipe_id: PropTypes.string.isRequired,
+    }).isRequired
+  }).isRequired
+};
