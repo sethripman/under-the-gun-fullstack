@@ -5,6 +5,21 @@ import styles from './RecipeDetail.css';
 
 const RecipeDetail = ({ match }) => {
   const { recipeDetail, loading } = useRecipeById(match.params.recipe_id);
+  const handleClick = event => {
+    return fetch(`https://fathomless-meadow-03057.herokuapp.com/api/v1/recipes/${match.params.recipe_id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        origin: true
+      }
+    })
+      .then(res => Promise.all([res.ok, res.json()]))
+      .then(([ok, json]) => {
+        if(!ok) throw json;
+        return json;
+      });
+    
+  };
 
   if(loading)
     return (
@@ -35,6 +50,7 @@ const RecipeDetail = ({ match }) => {
       <h3 className={styles.recipe_name}>{recipeDetail.name}</h3>
       <ul className={styles.ingredient_list}>{ingredientsArray}</ul>
       <ul className={styles.direction_list}>{mappedDirections}</ul>
+      <button onClick={handleClick}>Delete</button>
     </article>
   );
 };
