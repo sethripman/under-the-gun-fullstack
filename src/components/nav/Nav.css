@@ -15,10 +15,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 3rem;
+        font-size: 5rem;
         color: $pink;
+        letter-spacing: 3px;
         text-shadow: 2px 3px 1px $red;
-        font-family: 'Berkshire Swash', cursive;
+        font-family: 'Feral';
     }
     .nav_links {
         align-self: center;
