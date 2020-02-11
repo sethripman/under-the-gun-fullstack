@@ -28,10 +28,10 @@ const RecipeForm = () => {
   return (
     <form>
       <label>
-        <input type="text"  placeholder="Recipe Name"/>
+        <input type="text"  value={recipeName} onChange={({ target }) => setRecipeName(target.value)} placeholder="Recipe Name"/>
       </label>
       <label>
-        <textarea type="text"  placeholder="Directions"/>
+        <textarea type="text" value={directions} onChange={({ target }) => setDirections(target.value)} placeholder="Directions"/>
       </label>
       <button type="button" onClick={() => setIngredients(oi => [...oi, { name: '', amount: 0, unit: 'grams' }])}>Add An Ingredient</button>
       {ingredientInputs}
