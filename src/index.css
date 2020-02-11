@@ -1,0 +1,21 @@
+
+$red: #5a0908;
+$black: rgb(21, 20, 20);
+$pink: #ee25d6;
+$gray: #c9c1c1;
+$white: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: $white;
+    color: $black;
+  font-family: 'Indie Flower', cursive;
+}
