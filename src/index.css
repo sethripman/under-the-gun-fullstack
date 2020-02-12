@@ -17,6 +17,6 @@ html {
 body {
     background: $white;
     color: $black;
-  font-family: 'sans serif';
+  font-family: 'Oregano', cursive;
   letter-spacing: 1px;
 }

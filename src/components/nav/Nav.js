@@ -1,4 +1,5 @@
-import React, { Link } from 'react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../image/skull.png';
 import styles from './Nav.css';
 
@@ -9,13 +10,14 @@ const Nav = () => {
       <h1 className={styles.title}>Recipes to Die For</h1>
 
       <ul className={styles.nav_links}>
-        <li>
-          {/* <Link to='/home' className={styles.nav_link}>
-            Home
-          </Link> */}
-        </li>
+        <NavLink to='/' className={styles.nav_link}>
+          <li>Recipes</li>
+        </NavLink>
+        <NavLink to='/recipeForm' className={styles.nav_link}>
+          <li>Add Recipe</li>
+        </NavLink>
+        
       </ul>
-      
     </nav>
   );
 };
