@@ -6,6 +6,7 @@ import RecipeList from './recipes/RecipeList';
 import RecipeDetail from './recipes/RecipeDetail';
 import RecipeForm from './recipeForm/RecipeForm';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import RecipeForm from '../components/recipeForm/RecipeForm';
 
 export default function App() {
   return (
