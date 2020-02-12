@@ -19,23 +19,26 @@
         color: $pink;
         letter-spacing: 3px;
         text-shadow: 2px 3px 1px $red;
-        font-family: 'Feral';
+      
     }
     .nav_links {
         align-self: center;
         list-style-type: none;
-        display: grid;
-        text-align: end;
+       
+      
+        color: $pink;
         margin-right: 2rem;
     }
     .nav_link {
-        color: $gray;
-        text-transform: capitalize;
-        text-decoration: none;
+       text-align: center;
+  color: inherit;
+  text-decoration: inherit;
+  margin: 0 auto;
+  padding: 0.8rem 0.3rem 1rem 0.3rem;
         font-size: 2rem;
         transition: all .2s linear;
         &:hover {
-            color: $pink;
+            color: $red;
         }
     }
 }
