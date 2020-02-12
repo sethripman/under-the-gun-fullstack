@@ -12,11 +12,13 @@ $white: #fff;
 }
 html {
     font-size: 62.5%;
+    font-family: 'Feral';
+
 }
 
 body {
     background: $white;
     color: $black;
-  font-family: 'Oregano', cursive;
+  
   letter-spacing: 1px;
 }
