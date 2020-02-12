@@ -70,6 +70,7 @@ const RecipeForm = () => {
         return json;
       })
       .then(() => {
+        console.log(history);
         history.replace('/');
       });
   };

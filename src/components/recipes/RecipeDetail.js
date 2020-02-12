@@ -6,19 +6,21 @@ import styles from './RecipeDetail.css';
 
 const RecipeDetail = ({ match }) => {
   const history = useHistory();
-  console.log(match);
   const { recipeDetail, loading } = useRecipeById(match.params.recipe_id);
   const handleClick = event => {
-    return fetch(`https://fathomless-meadow-03057.herokuapp.com/api/v1/recipes/${match.params.recipe_id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        origin: true
+    return fetch(
+      `https://fathomless-meadow-03057.herokuapp.com/api/v1/recipes/${match.params.recipe_id}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          origin: true
+        }
       }
-    })
+    )
       .then(res => Promise.all([res.ok, res.json()]))
       .then(([ok, json]) => {
-        if(!ok) throw json;
+        if (!ok) throw json;
         return json;
       })
       .then(() => {
@@ -26,7 +28,7 @@ const RecipeDetail = ({ match }) => {
       });
   };
 
-  if(loading)
+  if (loading)
     return (
       <div className={styles.spinner}>
         <div className={styles.bounce1}></div>
@@ -52,10 +54,18 @@ const RecipeDetail = ({ match }) => {
 
   return (
     <article key={recipeDetail._id} className={styles.recipe}>
-      <h3 className={styles.recipe_name}>{recipeDetail.name}</h3>
-      <ul className={styles.ingredient_list}>{ingredientsArray}</ul>
-      <ul className={styles.direction_list}>{mappedDirections}</ul>
-      <button onClick={handleClick}>Delete</button>
+      <h3 className={styles.recipeTitle}>{recipeDetail.name}</h3>
+      <div className={styles.directionBox}>
+        <ul className={styles.directions}>
+          {ingredientsArray}
+          {mappedDirections}
+        </ul>
+      </div>
+      <div className={styles.btnContainer}>
+        <button className={styles.btn} onClick={handleClick}>
+          Delete
+        </button>
+      </div>
     </article>
   );
 };
@@ -64,7 +74,7 @@ export default RecipeDetail;
 RecipeDetail.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      recipe_id: PropTypes.string.isRequired,
+      recipe_id: PropTypes.string.isRequired
     }).isRequired
   }).isRequired
 };

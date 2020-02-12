@@ -1,0 +1,60 @@
+@import "../App.css";
+.recipeTitle {
+  font-size: 5rem;
+  padding-top: 3.5rem;
+  text-align: center;
+  color: $black;
+}
+.directionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+
+  .directions {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    height: auto;
+    color: $white;
+    width: 100rem;
+    background: $black;
+    margin: 2rem;
+    padding: 2rem;
+    border-width: 1rem;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, $red, rgba(0, 0, 0, 0)) 1 100%;
+  }
+  ul {
+    list-style: none;
+  }
+}
+.btnContainer {
+  display: flex;
+  justify-content: center;
+
+  .btn {
+    &,
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 3rem;
+      font-family: talon, sans-serif;
+      transition: all 0.2s;
+      position: relative;
+      letter-spacing: 1rem;
+      font-size: 3rem;
+      background: white;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        letter-spacing: 2rem;
+        color: $red;
+      }
+    }
+  }
+}
