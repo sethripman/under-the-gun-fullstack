@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './RecipeForm.css';
 
+
 const RecipeForm = () => {
+  const history = useHistory();
   const [recipeName, setRecipeName] = useState('');
   const [directions, setDirections] = useState([]);
   const [ingredients, setIngredients] = useState([]);
@@ -65,6 +68,9 @@ const RecipeForm = () => {
       .then(([ok, json]) => {
         if(!ok) throw json;
         return json;
+      })
+      .then(() => {
+        history.replace('/');
       });
   };
   return (

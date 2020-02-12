@@ -1,48 +1,40 @@
-@import '../App.css';
+@import "../App.css";
 
 .nav {
-    background: $black;
-    
-    img {
-        height: 7rem;
-        width: 7rem;
-        border-radius: 100%;
-        margin: 1rem;
-    }
-    .titleContainer {
-        display: flex;
-        justify-content: center;
-    }
-    .title {
-        font-size: 5rem;
-        color: $red;
-        font-family: 'Feral';
-        letter-spacing: 3.5px;
-      
-    }
-    .nav_links {
-        display: flex;
-        list-style-type: none;
-        color: $red;
+  background: $black;
 
-        margin-right: 2rem;
+  img {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 100%;
+    margin: 1rem;
+  }
+  .titleContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .title {
+    font-size: 8rem;
+    color: $red;
+    letter-spacing: 3.5px;
+  }
+  .nav_links {
+    display: flex;
+    list-style-type: none;
+    color: $red;
+    margin-right: 2rem;
+  }
+  .nav_link {
+    text-align: center;
+    color: inherit;
+    text-decoration: inherit;
+    margin: 0 auto;
+    padding: 0.8rem 0.3rem 1rem 0.3rem;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    transition: all 0.2s linear;
+    &:hover {
+      color: $red;
     }
-    .nav_link {
-       text-align: center;
-  color: inherit;
-  text-decoration: inherit;
-  margin: 0 auto;
-  padding: 0.8rem 0.3rem 1rem 0.3rem;
-        font-size: 2rem;
-        transition: all .2s linear;
-        &:hover {
-            color: $red;
-        }
-    }
+  }
 }
-
-
-
-
-
-
