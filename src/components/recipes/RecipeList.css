@@ -24,7 +24,7 @@
     height: 20rem;
     width: auto;
     padding-bottom: 0.3rem;
-    border-bottom: 4px solid $pink;
+    border-bottom: 4px solid $red;
     background-color: black;
   }
   .img_container {
@@ -50,7 +50,8 @@
   padding: 0.8rem 0.3rem 1rem 0.3rem;
 
   h3 {
-    font-size: 1rem;
+    font-size: 2rem;
+    letter-spacing: 2px;
     overflow: hidden;
     padding: 0.8rem 0.3rem 1rem 0.3rem;
   }

@@ -1,50 +1,40 @@
-@import '../App.css';
+@import "../App.css";
 
 .nav {
-    background: $black;
-    padding: 0.8rem 1.2rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    
-    img {
-        height: 7rem;
-        width: 7rem;
-        border-radius: 100%;
+  background: $black;
+
+  img {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 100%;
+    margin: 1rem;
+  }
+  .titleContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .title {
+    font-size: 8rem;
+    color: $red;
+    letter-spacing: 3.5px;
+  }
+  .nav_links {
+    display: flex;
+    list-style-type: none;
+    color: $red;
+    margin-right: 2rem;
+  }
+  .nav_link {
+    text-align: center;
+    color: inherit;
+    text-decoration: inherit;
+    margin: 0 auto;
+    padding: 0.8rem 0.3rem 1rem 0.3rem;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    transition: all 0.2s linear;
+    &:hover {
+      color: $red;
     }
-    .title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 5rem;
-        color: $pink;
-        letter-spacing: 3px;
-        text-shadow: 2px 3px 1px $red;
-      
-    }
-    .nav_links {
-        align-self: center;
-        list-style-type: none;
-       
-      
-        color: $pink;
-        margin-right: 2rem;
-    }
-    .nav_link {
-       text-align: center;
-  color: inherit;
-  text-decoration: inherit;
-  margin: 0 auto;
-  padding: 0.8rem 0.3rem 1rem 0.3rem;
-        font-size: 2rem;
-        transition: all .2s linear;
-        &:hover {
-            color: $red;
-        }
-    }
+  }
 }
-
-
-
-
-
-
