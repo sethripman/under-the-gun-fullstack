@@ -22,7 +22,6 @@ const RecipeDetail = ({ match }) => {
         return json;
       })
       .then(() => {
-        console.log(history);
         history.replace('/');
       });
   };
